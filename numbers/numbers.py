@@ -37,7 +37,7 @@ integer1 = "Not an integer"
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-integer1IsInteger = False
+integer1IsInteger = isinstance(integer1, int)
 
 ########################################################################
 
@@ -54,7 +54,7 @@ float1 = 45.6
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-float1IsFloat = True
+float1IsFloat = isinstance(float1, float)
 
 ########################################################################
 
@@ -70,7 +70,7 @@ getMyAbsoluteValue = -64.4
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-absoluteValue = None
+absoluteValue = abs(getMyAbsoluteValue)
 
 ########################################################################
 
@@ -89,7 +89,7 @@ import math
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-
+roundedUpNumber = math.ceil(roundMeUp)
 
 ########################################################################
 
@@ -107,7 +107,7 @@ roundMeDown = 85.4
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-roundedDownNumber = None
+roundedDownNumber = math.floor(roundMeDown)
 
 ########################################################################
 
@@ -124,7 +124,7 @@ powerNumber = 5
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-baseToThePower = None
+baseToThePower = math.pow(4, 5)
 
 ########################################################################
 
@@ -141,8 +141,8 @@ maxValue = 35
 #
 ###################### YOUR CODE BELOW THIS LINE #######################
 
-scorePercentage = None
-
+unrounded = (scoreValue / maxValue) * 100
+scorePercentage = round(unrounded, 3)
 ########################################################################
 
 
@@ -158,7 +158,7 @@ score = 145
 #
 ###################### YOUR CODE BELOW THIS LINE ######################
 
-scoreMessage = None
+scoreMessage = messagePrefix + ' '+ str(score)
 
 ########################################################################
 
@@ -177,7 +177,8 @@ import re
 #
 ###################### YOUR CODE BELOW THIS LINE ######################
 
-parsedNumber = None
+match = re.search(r'\d+\.?\d*', parseTheNumber)
+parsedNumber = float(match.group())
 
 ########################################################################
 
